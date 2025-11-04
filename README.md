@@ -1,0 +1,2 @@
+# ELECTION.MAD
+vota seguro
