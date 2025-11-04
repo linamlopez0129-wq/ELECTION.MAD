@@ -1,0 +1,31 @@
+.contador {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.2s;
+  display: flex;
+}
+
+.foto-candidato {
+  width: 180px;
+  height: 180px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.boton-votar {
+  background: linear-gradient(90deg, #ff3cac, #784ba0);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: 0.2s;
+}
+
+.boton-votar:hover {
+  opacity: 0.9;
+}

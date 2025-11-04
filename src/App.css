@@ -1,0 +1,556 @@
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(135deg, #e185de, #f3a7e8, #f09ddc);
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.contenedor-principal,
+.pantalla-inicial,
+.App {
+  background: transparent; 
+  box-shadow: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; 
+  text-align: center;
+}
+
+
+/* 🌷 Un toque extra: sombras suaves y transición */
+.candidato-card {
+  background: white;
+  border-radius: 30px;
+  box-shadow: 0 8px 20px rgba(248, 166, 248, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.candidato-card:hover {
+  transform: translateY(-5px);
+  background: linear-gradient(135deg, #fafafa, #f9bce8, #fffeff, #e0afcd);
+;
+}
+
+.logo {
+  width: 140px;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(255, 182, 193, 0.6),
+              0 0 40px rgba(221, 160, 221, 0.4);
+  transition: all 0.4s ease;
+  animation: brillar 3s infinite alternate;
+}
+
+/* Animación suave de brillo */
+@keyframes brillar {
+  0% {
+    box-shadow: 0 0 15px rgba(255, 192, 203, 0.5),
+                0 0 30px rgba(221, 160, 221, 0.3);
+    transform: scale(1);
+  }
+  100% {
+    box-shadow: 0 0 25px rgba(255, 105, 180, 0.8),
+                0 0 50px rgba(186, 85, 211, 0.6);
+    transform: scale(1.05);
+  }
+}
+
+/* Efecto hover (cuando pasas el mouse) */
+.logo:hover {
+  transform: rotate(5deg) scale(1.1);
+  box-shadow: 0 0 30px rgba(239, 165, 243, 0.9),
+              0 0 60px rgba(244, 151, 244, 0.7);
+  filter: brightness(1.1);
+}
+
+
+.titulo {
+  color: #c2185b;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.saludo {
+  color: #d63384;
+}
+
+.input-nombre {
+  padding: 10px;
+  border-radius: 10px;
+  border: 2px solid #f48fb1;
+  outline: none;
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.candidatos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.candidato-card h3 {
+   text-align: center; 
+   font-size: 16px; margin: 8px 0; 
+   word-wrap: break-word; 
+   white-space: normal; text-transform: 
+   capitalize; word-wrap: 
+   break-word; white-space:
+    normal; max-width: 150px; 
+  /* 🔹 puedes subir este número si es muy pequeño */ }
+
+
+.candidato-card:hover {
+  transform: scale(1.05);
+}
+
+/* Imagen del candidato */
+.imagen-candidato {
+  width: 120px;
+  height: 120px;
+  object-fit: cover; /* ✅ recorta la imagen sin deformarla */
+  border: 3px solid #ff66b2;
+   border-radius: 15%;
+}
+
+/* Botón eliminar */
+.eliminar {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: none;
+  border: none;
+  color: #ff4081;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.eliminar:hover {
+  transform: scale(1.2);
+}
+
+/* Tarjeta del candidato */ 
+.candidato-card { 
+  
+  background: #fff; 
+  border-radius: 20px; 
+  padding: 15px; 
+  width: 180px; 
+  height: 260px; 
+  /* ✅ tamaño fijo para que todas sean iguales */ 
+  display: flex; 
+  flex-direction: column;
+   align-items: center; 
+  justify-content: space-between;
+   /* distribuye bien el contenido */ 
+   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+   transition: transform 0.2s ease; }
+
+
+
+.imagen-candidato {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border: 3px solid #ff9ecf;
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.imagen-candidato:hover {
+  transform: scale(1.1);
+}
+.boton {
+  background: linear-gradient(135deg, #ffb6c1, #ff9cee);
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 24px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(255, 182, 193, 0.4);
+  transition: all 0.3s ease;
+}
+
+.boton, .votar {
+  background: linear-gradient(135deg, #ffb6c1, #ff9cee);
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 24px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(255, 182, 193, 0.4);
+  transition: all 0.3s ease;
+}
+
+.boton:hover {
+  background: linear-gradient(135deg, #ff99cc, #ff66b2);
+  transform: translateY(-3px);
+}
+
+/* Contenedor general */
+ .candidato-card { position: relative; }
+ 
+.eliminar {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  color: #f06292;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.botones-finales {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.resultados {
+  margin-top: 25px;
+  background: #fff0f6;
+  border-radius: 14px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(255, 182, 193, 0.3);
+}
+
+.ventana-clave {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  width: 280px;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(255, 182, 193, 0.4);
+}
+
+.mensaje-voto {
+  background: linear-gradient(135deg, #ffe0f0, #f8b4d9);
+  color: #c2185b;
+  font-weight: bold;
+  padding: 20px 40px;
+  border-radius: 20px;
+  margin: 40px auto;
+  width: fit-content;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  font-size: 2rem;
+  animation: aparecer 0.5s ease;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+h2 {
+  font-size: 3rem; /* Tamaño grande pero elegante */
+}
+
+.mensaje-con-muñequito {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: aparecer 0.8s ease-in-out;
+}
+
+.mensaje-voto {
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: aparecer 0.8s ease-in-out;
+}
+
+.muñequito {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  animation: saltito 1s infinite ease-in-out;
+}
+
+.imagen-candidato {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border: 3px solid #ff9ecf;
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.imagen-candidato:hover {
+  transform: scale(1.1);
+}
+
+.lema-candidato {
+  font-style: italic;
+  color: #ff66b2;
+  background: rgba(255, 240, 250, 0.7);
+  padding: 5px 10px;
+  border-radius: 12px;
+  margin-top: 6px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+/* 🔹 Contenedor general de los inputs y botones */
+.acciones {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+  background: linear-gradient(145deg, #ffb3e0, #ffccf2);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(255, 150, 200, 0.4);
+  width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: all 0.3s ease-in-out;
+}
+
+.acciones:hover {
+  transform: scale(1.02);
+}
+
+/* 🔹 Inputs de texto */
+.acciones input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  background-color: #fff;
+  font-size: 15px;
+  text-align: center;
+  box-shadow: 0 0 6px rgba(255, 105, 180, 0.4);
+  transition: all 0.3s;
+}
+
+.acciones input[type="text"]:focus {
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.7);
+}
+
+/* 🔹 Input de imagen */
+.acciones input[type="file"] {
+  background-color: #fff;
+  padding: 8px;
+  border-radius: 10px;
+  width: 100%;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  color: #ff69b4;
+  border: 2px dashed #ff99cc;
+  transition: all 0.3s;
+}
+
+.acciones input[type="file"]:hover {
+  background-color: #ffe6f5;
+}
+
+/* 🔹 Botón “Agregar Candidato” */
+.acciones button {
+  background: linear-gradient(90deg, #ff80bf, #ff66b3);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 3px 8px rgba(255, 105, 180, 0.4);
+  transition: all 0.3s ease;
+}
+
+.acciones button:hover {
+  background: linear-gradient(90deg, #ff99cc, #ff66b3);
+  transform: scale(1.05);
+}
+
+/* 🔹 Imagen de candidato */
+.imagen-candidato {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 3px solid #ffb3d9;
+  margin-bottom: 8px;
+  box-shadow: 0 0 8px rgba(255, 150, 200, 0.4);
+  background-color: white;
+}
+
+/* 🔹 Tarjeta de candidato */
+.candidato-card {
+  position: relative;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(255, 150, 200, 0.3);
+  padding: 15px;
+  text-align: center;
+  width: 180px;
+  margin: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.candidato-card:hover {
+  transform: translateY(-5px);
+}
+
+/* 🔹 Botón eliminar */
+.eliminar {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: #ff4081;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.eliminar:hover {
+  color: #d63384;
+  transform: scale(1.2);
+}
+
+/* 🩷 Formulario para agregar candidato */
+.formulario-candidato {
+  background-color: #ffe6f2;
+  border: 2px solid #ffb6d9;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 4px 10px rgba(255, 182, 217, 0.4);
+  animation: aparecer 0.4s ease-in-out;
+}
+
+.formulario-candidato input[type="text"],
+.formulario-candidato input[type="file"] {
+  width: 90%;
+  padding: 10px;
+  border: 2px solid #ffb6d9;
+  border-radius: 10px;
+  outline: none;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.formulario-candidato input[type="text"]:focus {
+  border-color: #ff69b4;
+  box-shadow: 0 0 5px #ff69b4;
+}
+
+.formulario-candidato input[type="file"] {
+  background-color: #fff;
+  cursor: pointer;
+}
+
+/* 🩷 Botón "Agregar candidato" */
+.boton-agregar {
+  background-color: #ff85c1;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(255, 105, 180, 0.4);
+}
+
+.boton-agregar:hover {
+  background-color: #ff66b3;
+  transform: scale(1.05);
+}
+
+/* 📋 Botones finales (Agregar candidato / Revisar votos) */
+.botones-finales {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 25px;
+}
+
+/* ✨ Animación suave al aparecer */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+/* 🌸 Estilos para el botón "Elegir archivo" */
+.formulario-candidato input[type="file"] {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: #ffb6d9;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 15px;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  cursor: pointer;
+  width: auto;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(255, 105, 180, 0.4);
+}
+
+.formulario-candidato input[type="file"]::file-selector-button {
+  background-color: #ff85c1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.formulario-candidato input[type="file"]::file-selector-button:hover {
+  background-color: #ff66b3;
+  transform: scale(1.05);
+}
+
+/* 💫 efecto al pasar el mouse */
+.formulario-candidato input[type="file"]:hover {
+  box-shadow: 0 0 10px rgba(255, 182, 217, 0.8);
+}
+
+
+
+

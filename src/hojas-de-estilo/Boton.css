@@ -1,0 +1,143 @@
+button {
+    width: 250px;
+    height: 80px;
+    font-size: 35px;
+    font-family: Roboto, sans-serif;
+    font-weight: bold;
+    color: white;
+    border: 2px solid white;
+    border-radius: 15px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color:#d674ea;
+}
+.boton {
+    background-color: #fc4ec8;
+}
+
+.reiniciar {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+}
+
+.botones-finales {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 30px;
+}
+
+/* 💕 Estilo general de los botones */
+.botones-finales button,
+.boton {
+  background: linear-gradient(135deg, #ffb6c1, #ff9cee);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(255, 182, 193, 0.4);
+  transition: all 0.3s ease;
+  text-align: center;
+  letter-spacing: 0.5px;
+  animation: brillar 4s ease-in-out infinite; /* ✨ animación de brillo */
+  position: relative;
+  overflow: hidden;
+}
+
+/* 🌟 Efecto de brillo suave */
+@keyframes brillar {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(255, 192, 203, 0.4),
+                0 0 20px rgba(255, 105, 180, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 18px rgba(255, 182, 193, 0.8),
+                0 0 28px rgba(255, 105, 180, 0.6);
+  }
+}
+
+
+.botones-finales button:hover,
+.boton:hover {
+  background: linear-gradient(135deg, #ff99cc, #ff66b2);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 6px 14px rgba(255, 153, 204, 0.6);
+}
+
+.botones-finales button:active,
+.boton:active {
+  transform: scale(0.95);
+}
+
+
+.botones-finales button::before,
+.boton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75px;
+  width: 50px;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: skewX(-20deg);
+  transition: 0.5s;
+}
+
+
+.botones-finales button:hover::before,
+.boton:hover::before {
+  left: 120%;
+}
+
+
+.botones-finales button:nth-child(1) {
+  background: linear-gradient(135deg, #f9a8d4, #fbcfe8);
+}
+
+.botones-finales button:nth-child(2) {
+  background: linear-gradient(135deg, #c084fc, #e9d5ff);
+}
+
+.botones-finales button:nth-child(3) {
+  background: linear-gradient(135deg, #fcd34d, #fde68a);
+  color: #5a4300;
+}
+
+.botones-finales button:nth-child(4) {
+  background: linear-gradient(135deg, #f87171, #fca5a5);
+
+}
+
+.voto {
+  background: linear-gradient(135deg, #ff99cc, #ff66b2);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 6px 14px rgba(255, 153, 204, 0.6);
+  background: linear-gradient(135deg, #ffb6c1, #ff9cee);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(255, 182, 193, 0.4);
+  transition: all 0.3s ease;
+  text-align: center;
+  letter-spacing: 0.5px;
+  animation: brillar 4s ease-in-out infinite; /* ✨ animación de brillo */
+  position: relative;
+  overflow: hidden;
+}
